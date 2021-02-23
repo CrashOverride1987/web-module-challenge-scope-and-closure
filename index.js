@@ -28,12 +28,19 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+
   counter1 is being set to the first function counterMaker, which defines a count variable inside the scope of that function and returns a function called counter that increments count.
   counter2 is just a function that increments count.
+
   2. Which of the two uses a closure? How can you tell?
+
   counter1, counter1 will reset count when used in different contexts, whereas counter2 will not.
+
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  counter1 would be tracking different games, counter2 would be every individual game score count.
+     counter2 be better?  
+     
+     counter1 would be tracking different games, counter2 would be every individual game score count.
+
 */
 
 // counter1 code
@@ -148,23 +155,23 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(callback /*finalScore function task 2*/, callback2 /*getInningScore function task 4*/, innings) {
-let array = [];
-  for (let i=0; i <= innings; i++) {
-    if (callback() === callback() && i == innings) {
-      array.push(`This game will require extra innings: Away ${callback2().result.Away} - Home ${callback2().result.Home}`)
-    }
-    else if (i == innings) {
-      array.push(`Final Score: Away ${callback()} - Home ${callback()}`)
-    }
-    else {
-      array.push(`Inning ${i+1}: Away ${callback2().result.Away} - Home ${callback2().result.Home}`)
-    }
-  }
-  console.log(array);
+function scoreboard(callback /*inning function task 2*/, callback2 /*getInningScore function task 4*/, innings) {
+// let array = [];
+//   for (let i=0; i <= innings; i++) {
+//     if (finalScore().homeTeam === finalScore().awayTeam && i == innings) {
+//       array.push(`This game will require extra innings: Away ${callback2().result} - Home ${callback2().result}`)
+//     }
+//     else if (i == innings) {
+//       array.push(`Final Score: Away ${finalScore().awayTeam} - Home ${finalScore().homeTeam}`)
+//     }
+//     else {
+//       array.push(`Inning ${i+1}: Away ${callback2().result} - Home ${callback2().result}`)
+//     }
+//   }
+//   console.log(array);
 
 }
-scoreboard(inning(), getInningScore(), 10)
+// scoreboard(inning, getInningScore, 10)
 
 
 
